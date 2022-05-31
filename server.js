@@ -20,9 +20,38 @@ const db = mysql.createConnection(
   console.log(`Connected to the election database.`)
 );
 
-db.query(`SELECT * FROM candidates`, (err, rows) => {
-  console.log(rows);
-});
+// // Create a candidate
+// const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected)
+//             VALUES (?,?,?,?)`;
+// const params = [1, 'Ronald', 'Frank', 1];
+
+// db.query(sql, params, (err, result) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log(result);
+// });
+            
+// //Delete a candidate
+// db.query(`DELETE FROM candidates WHERE id = ?`, 1, (err,result) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log(result);
+// }); 
+// //Console.logs whole table from sql in an array.
+// db.query(`SELECT * FROM candidates`, (err, rows) => {
+//   console.log(rows);
+// });
+// //GET a single candidate
+// db.query(`SELECT * FROM candidates WHERE id = 1` , (err, row) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log(row);
+// });
+
+
 // Default response for any other request (Not Fount)
 // must be last route listed. It is a catchall
 app.use((req, res) => {
